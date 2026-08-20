@@ -1,19 +1,19 @@
+"""Spot Painting Project"""
 import random
 import turtle
 from turtle import Turtle, Screen
-
 import colorgram
 
-rgb_colors = []
-colors = colorgram.extract("img.jpg", 80)
-for color in colors:
-    r = color.rgb.r
-    g = color.rgb.g
-    b = color.rgb.b
-    new_color = (r, g, b)
-    rgb_colors.append(new_color)
+# rgb_colors = []
+# colors = colorgram.extract("img.jpg", 80)
+# for color in colors:
+#     r = color.rgb.r
+#     g = color.rgb.g
+#     b = color.rgb.b
+#     new_color = (r, g, b)
+#     rgb_colors.append(new_color)
 
-print(rgb_colors)
+# print(rgb_colors)
 
 color_list = [(233, 233, 232), (231, 233, 237), (236, 231, 234),
               (222, 232, 226), (208, 160, 82), (54, 89, 131), (146, 91, 40),
@@ -36,12 +36,14 @@ myt.forward(400)
 myt.setheading(0)
 
 def draw_dot():
+    """Draws a row of 10 dots with random colors from the color_list."""
     for i in range(10):
         myt.dot(20, random.choice(color_list))
         myt.penup()
         myt.forward(50)
 
 def turn_left():
+    """Turns the turtle left and moves it forward."""
     myt.setheading(90)
     myt.penup()
     myt.forward(50)
@@ -50,6 +52,7 @@ def turn_left():
     myt.forward(50)
 
 def turn_right():
+    """Turns the turtle right and moves it forward."""
     myt.setheading(90)
     myt.penup()
     myt.forward(50)
@@ -58,6 +61,7 @@ def turn_right():
     myt.forward(50)
 
 def one_cycle():
+    """Draws a cycle of dots and turns the turtle."""
     turn_left()
     draw_dot()
     turn_right()
