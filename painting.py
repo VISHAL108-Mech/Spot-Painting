@@ -37,7 +37,7 @@ myt.setheading(0)
 
 def draw_dot():
     """Draws a row of 10 dots with random colors from the color_list."""
-    for i in range(10):
+    for _ in range(10):
         myt.dot(20, random.choice(color_list))
         myt.penup()
         myt.forward(50)
